@@ -8,7 +8,7 @@ water_boiled,煮沸水,Consumable.Drink.Safe;Effect.Thirst.Restore,20,0,,0,t0_2,
 food_canned,废墟罐头,Consumable.Food.Safe;Effect.Hunger.Restore,10,0,,0,t0_1,有限探索食物
 food_root_raw,可食块根,Resource.Natural;Consumable.Food.Raw,20,0,,0,t0_1,可烹饪食物
 food_root_cooked,烤块根,Consumable.Food.Safe;Effect.Hunger.Restore,20,0,,0,t0_2,基础熟食
-clothing_basic_repaired,修补衣物,Equipment.Clothing;Effect.Exposure.Resist,1,0,,120,t0_2,T0衣物保障
+clothing_basic_repaired,修补衣物,Equipment.Clothing,1,0,,120,t0_2,T0衣物保障且暂不计算保暖
 scrap_steel,废钢,Resource.Salvage;Material.Metal.Scrap,50,0,,0,t0_1,主要残骸产物
 copper_wire_salvaged,回收铜线,Resource.Salvage;Material.Metal.Copper,50,0,,0,t0_4,远征关键材料
 mechanical_scrap,机械碎件,Resource.Salvage;Part.Mechanical.Scrap,30,0,,0,t0_4,发电机关键材料
@@ -22,6 +22,9 @@ hammer_stone,简易石锤,Item.Tool.Basic,1,0,Tool.Hammer.T0,100,t0_1,耐久启�
 prybar_crude,简易撬棍,Item.Tool.Salvage,1,0,Tool.Pry.T1,150,t0_2,耐久启用
 wrench_crude,简易扳手,Item.Tool.Build,1,0,Tool.Wrench.T1,150,t0_3,耐久启用
 sewing_kit_crude,简易缝制工具,Item.Tool.Repair,1,0,Tool.Sewing.T0,80,t0_2,衣物修补工具
-carrier_frame_basic,简易背包架,Equipment.Carry;Effect.Inventory.Expand,1,0,,100,t0_4,行方案占位待审核
+backpack_t0_1,一级背包,Equipment.Carry;Inventory.Capacity.10,1,0,,100,t0_1,初始10格背包
+backpack_t0_2,二级背包,Equipment.Carry;Inventory.Capacity.20,1,0,,150,t0_2,20格探索背包
+backpack_t0_3,三级背包,Equipment.Carry;Inventory.Capacity.30,1,0,,200,t0_4,30格远征背包
+lamp_salvaged_broken,损坏的旧电灯,Item.Salvage.PowerConsumer.Broken;Quest.T0,1,0,,0,t0_4,确定性远征目标且必须维修
+lamp_salvaged_repaired,修好的旧电灯,Item.PowerConsumer;Quest.T0,1,0,,60,t0_5,T0最终测试负载
 diesel_salvaged,回收柴油,Resource.Salvage;Fuel.Liquid.High,10,100,,0,t0_4,稀有可选战利品且T0不可制造
-

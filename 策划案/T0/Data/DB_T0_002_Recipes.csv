@@ -10,7 +10,8 @@ sort_scrap_steel,分选废钢,scrap_steel:3,steel_stock:2,mechanical_scrap:1,Pro
 craft_fastener_basic,制作基础紧固件,steel_stock:1,fastener_basic:4,,Process.Assembly.Basic,Tool.Hammer.T0,10,,,t0_3,placeholder
 hammer_steel_plate_manual,手工锤制金属板,steel_stock:3,steel_plate:1,,Process.Assembly.Basic,Tool.Hammer.T0,18,,,t0_3,placeholder
 craft_wrench_crude,制作简易扳手,steel_stock:3;fastener_basic:4;wood_scrap:1,wrench_crude:1,,Process.Assembly.Basic,Tool.Hammer.T0,14,,,t0_3,placeholder
-craft_carrier_frame,制作简易背包架,wood_scrap:6;cloth_salvaged:4;fastener_basic:4,carrier_frame_basic:1,,Process.Assembly.Basic,Tool.Hammer.T0,16,,,t0_4,provisional
+upgrade_backpack_t0_2,升级二级背包,backpack_t0_1:1;cloth_salvaged:4;rope_crude:2,backpack_t0_2:1,,Process.Assembly.Basic,Tool.Sewing.T0,14,,,t0_2,placeholder
+upgrade_backpack_t0_3,升级三级背包,backpack_t0_2:1;cloth_salvaged:6;fastener_basic:4,backpack_t0_3:1,,Process.Assembly.Basic,Tool.Sewing.T0,20,,,t0_4,placeholder
+repair_lamp_salvaged,维修捡来的旧电灯,lamp_salvaged_broken:1;copper_wire_salvaged:2;fastener_basic:2,lamp_salvaged_repaired:1,,Process.Repair.Electrical,Tool.Wrench.T1,18,,,t0_5,placeholder
 craft_pipe_basic,制作基础管件,steel_plate:1;fastener_basic:2,pipe_basic:2,,Process.Assembly.Basic,Tool.Hammer.T0,12,,,t0_5,placeholder
 craft_generator_rotor,制作简易发电机转子,mechanical_scrap:4;copper_wire_salvaged:6;steel_plate:2,generator_rotor_crude:1,,Process.Assembly.Basic,Tool.Wrench.T1,24,,,t0_5,placeholder
-
