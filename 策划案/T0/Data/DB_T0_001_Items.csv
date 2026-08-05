@@ -9,10 +9,10 @@ food_canned,废墟罐头,Consumable.Food.Safe;Effect.Hunger.Restore,10,0,,0,t0_1
 food_root_raw,可食块根,Resource.Natural;Consumable.Food.Raw,20,0,,0,t0_1,可烹饪食物
 food_root_cooked,烤块根,Consumable.Food.Safe;Effect.Hunger.Restore,20,0,,0,t0_2,基础熟食
 clothing_basic_repaired,修补衣物,Equipment.Clothing,1,0,,120,t0_2,T0衣物保障且暂不计算保暖
-scrap_steel,废钢,Resource.Salvage;Material.Metal.Scrap,50,0,,0,t0_1,主要残骸产物
+scrap_steel,含铁废料,Resource.Salvage;Material.Metal.Scrap,50,0,,0,t0_1,保留技术ID并作为大型资源拆解产物
 copper_wire_salvaged,回收铜线,Resource.Salvage;Material.Metal.Copper,50,0,,0,t0_4,远征关键材料
 mechanical_scrap,机械碎件,Resource.Salvage;Part.Mechanical.Scrap,30,0,,0,t0_4,发电机关键材料
-steel_stock,可用钢料,Material.Metal.Steel.Processed,50,0,,0,t0_3,废钢分选后的加工输入
+steel_stock,可用钢料,Material.Metal.Steel.Processed,50,0,,0,t0_3,含铁废料分选后的加工输入
 steel_plate,金属板,Material.Metal.Steel.Plate,50,0,,0,t0_3,手工制造首批能源设施
 fastener_basic,基础紧固件,Part.Mechanical.Fastener.Basic,50,0,,0,t0_3,基础组装零件
 pipe_basic,基础管件,Part.Fluid.Pipe.Basic,20,0,,0,t0_5,低压蒸汽连接部件

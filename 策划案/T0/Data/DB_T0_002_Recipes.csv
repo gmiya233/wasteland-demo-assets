@@ -6,7 +6,7 @@ cook_root,烤制块根,food_root_raw:1;wood_scrap:1,food_root_cooked:1,,Process.
 craft_sewing_kit,制作简易缝制工具,scrap_steel:1;wood_scrap:1;fiber_plant:2,sewing_kit_crude:1,,Process.Handcraft,Tool.Hammer.T0,8,,,t0_2,placeholder
 repair_clothing_basic,修补基础衣物,cloth_salvaged:4;fiber_plant:2,clothing_basic_repaired:1,,Process.Repair.Clothing,Tool.Sewing.T0,12,,,t0_2,placeholder
 craft_prybar_crude,制作简易撬棍,scrap_steel:4;rope_crude:1,prybar_crude:1,,Process.Assembly.Basic,Tool.Hammer.T0,12,,,t0_2,placeholder
-sort_scrap_steel,分选废钢,scrap_steel:3,steel_stock:2,mechanical_scrap:1,Process.Sorting.Basic,Tool.Hammer.T0,8,,,t0_3,placeholder
+sort_scrap_steel,分选含铁废料,scrap_steel:3,steel_stock:2,mechanical_scrap:1,Process.Sorting.Basic,Tool.Hammer.T0,8,,,t0_3,placeholder
 craft_fastener_basic,制作基础紧固件,steel_stock:1,fastener_basic:4,,Process.Assembly.Basic,Tool.Hammer.T0,10,,,t0_3,placeholder
 hammer_steel_plate_manual,手工锤制金属板,steel_stock:3,steel_plate:1,,Process.Assembly.Basic,Tool.Hammer.T0,18,,,t0_3,placeholder
 craft_wrench_crude,制作简易扳手,steel_stock:3;fastener_basic:4;wood_scrap:1,wrench_crude:1,,Process.Assembly.Basic,Tool.Hammer.T0,14,,,t0_3,placeholder
