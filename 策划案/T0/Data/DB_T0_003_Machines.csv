@@ -1,10 +1,13 @@
 machine_id,display_name,machine_type,build_cost,process_tags,input_slots,output_slots,energy_accept_tags,energy_output_tags,internal_capacity,throughput_per_second,unlock_milestone,balance_status
 campfire_crude,简易火堆,Survival,stone_chunk:6;wood_scrap:4,Process.Cooking.Basic,2,1,,,0,0,t0_1,placeholder
-workbench_crude,简易工作台,Workbench,wood_scrap:8;scrap_steel:4,Process.Assembly.Basic;Process.Sorting.Basic;Process.Repair.Clothing,6,2,,,0,0,t0_3,placeholder
+workbench_crude,简易工作台,Workbench,wood_scrap:8;scrap_steel:4,Process.Assembly.Basic;Process.Sorting.Basic;Process.Repair.Clothing;Process.Repair.Electrical,6,2,,,0,0,t0_3,placeholder
 storage_chest_crude,简易储物箱,Storage,wood_scrap:10;scrap_steel:2,,12,0,,,0,0,t0_3,placeholder
 bedroll_crude,简易床铺,Survival,cloth_salvaged:6;fiber_plant:8;wood_scrap:2,,0,0,,,0,0,t0_3,placeholder
-shelter_core_crude,基础庇护所核心,Building,wood_scrap:16;cloth_salvaged:8;fastener_basic:4,,0,0,,,0,0,t0_3,placeholder
+building_foundation_wood,简易木地基,BuildingComponent,wood_scrap:6;fastener_basic:2,,0,0,,,0,0,t0_3,placeholder
+building_floor_wood,简易木地板,BuildingComponent,wood_scrap:4;fastener_basic:1,,0,0,,,0,0,t0_3,placeholder
+building_wall_wood,简易木墙,BuildingComponent,wood_scrap:4;fastener_basic:1,,0,0,,,0,0,t0_3,placeholder
+building_doorway_wood,简易门框墙,BuildingComponent,wood_scrap:5;fastener_basic:1,,0,0,,,0,0,t0_3,placeholder
+building_roof_wood,简易木屋顶,BuildingComponent,wood_scrap:4;cloth_salvaged:2;fastener_basic:1,,0,0,,,0,0,t0_3,placeholder
 boiler_steam_crude,简易蒸汽锅炉,EnergyProducer,scrap_steel:12;steel_plate:4;fastener_basic:8;pipe_basic:2,,2,0,,Energy.Steam.LowPressure,100,2,t0_5,placeholder
 steam_generator_crude,简易蒸汽发电机,EnergyConverter,steel_plate:8;fastener_basic:10;pipe_basic:2;generator_rotor_crude:1,,1,0,Energy.Steam.LowPressure,Energy.Electricity.T0,20,1,t0_5,placeholder
-test_lamp_crude,测试电灯,EnergyConsumer,steel_plate:1;copper_wire_salvaged:2,,0,0,Energy.Electricity.T0,,0,1,t0_5,placeholder
-
+placed_lamp_salvaged_repaired,接入的旧电灯,EnergyConsumer,lamp_salvaged_repaired:1,,0,0,Energy.Electricity.T0,,0,1,t0_5,placeholder
