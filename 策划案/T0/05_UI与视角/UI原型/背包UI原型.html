@@ -1,0 +1,1345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Wasteland Inventory Ui</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Wasteland Inventory Ui" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Wasteland Inventory Ui&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --red: light-dark(rgb(186 38 35), rgb(250 66 62));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: var(--border-radius-lg, 12.5px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+    [aria-pressed=&quot;true&quot;],
+    [aria-selected=&quot;true&quot;],
+    .is-selected
+  ) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: 16px !important;
+  height: 16px !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;section id=&quot;wasteland-inventory-concept&quot; aria-label=&quot;废土工业游戏背包界面交互概念&quot;&gt;
+  &lt;style&gt;
+    #wasteland-inventory-concept {
+      font-family: Inter, &quot;Microsoft YaHei&quot;, sans-serif;
+      color: #e8edf0;
+      background:
+        linear-gradient(180deg, rgba(8,13,15,.36), rgba(7,10,11,.78)),
+        radial-gradient(circle at 48% 28%, #4c544d 0, #282f2c 32%, #111718 78%);
+      min-height: 650px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #313b3c;
+    }
+    #wasteland-inventory-concept * { box-sizing: border-box; }
+    #wasteland-inventory-concept button { font: inherit; }
+    #wasteland-inventory-concept .wi-world {
+      position: absolute; inset: 0; opacity: .34; pointer-events: none;
+      background: linear-gradient(112deg, transparent 0 17%, rgba(155,164,148,.16) 17.2% 18%, transparent 18.2% 66%, rgba(134,143,133,.13) 66.2% 67%, transparent 67.2%);
+    }
+    #wasteland-inventory-concept .wi-shell { position: relative; padding: 22px 26px 104px; min-height: 650px; }
+    #wasteland-inventory-concept .wi-topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    #wasteland-inventory-concept .wi-brand { letter-spacing: .18em; font-weight: 500; color: #c9d0cb; }
+    #wasteland-inventory-concept .wi-mode-switch { display: flex; gap: 6px; }
+    #wasteland-inventory-concept .wi-mode-switch button {
+      min-height: 40px; padding: 0 18px; border: 1px solid #596361; color: #c6cfcb; background: rgba(17,24,24,.88); cursor: pointer;
+    }
+    #wasteland-inventory-concept .wi-mode-switch button[aria-pressed=&quot;true&quot;] { background: #b66b18; border-color: #e9a23d; color: #fff7e7; }
+    #wasteland-inventory-concept .wi-main { display: grid; grid-template-columns: minmax(310px, .92fr) minmax(470px, 1.42fr); gap: 18px; transition: grid-template-columns .22s ease; }
+    #wasteland-inventory-concept .wi-main.is-solo { grid-template-columns: minmax(310px, 440px); }
+    #wasteland-inventory-concept .wi-panel { background: rgba(12,18,19,.94); border: 1px solid #3e4948; box-shadow: 0 14px 40px rgba(0,0,0,.38); }
+    #wasteland-inventory-concept .wi-panel-head { height: 52px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #394342; background: rgba(29,37,37,.9); }
+    #wasteland-inventory-concept .wi-panel-title { font-weight: 500; letter-spacing: .08em; }
+    #wasteland-inventory-concept .wi-capacity { color: #aeb8b4; font-variant-numeric: tabular-nums; }
+    #wasteland-inventory-concept .wi-head-actions { display: flex; align-items: center; gap: 10px; }
+    #wasteland-inventory-concept .wi-craft-toggle { min-height: 36px; padding: 0 14px; border: 1px solid #b8792d; background: #3e3426; color: #f3d6aa; cursor: pointer; }
+    #wasteland-inventory-concept .wi-craft-toggle[aria-pressed=&quot;true&quot;] { background: #b66b18; border-color: #e9a23d; color: #fff7e7; }
+    #wasteland-inventory-concept .wi-inventory-body { display: grid; grid-template-columns: 1fr 126px; gap: 16px; padding: 16px; }
+    #wasteland-inventory-concept .wi-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(4, minmax(0, 1fr)); width: 100%; aspect-ratio: 3 / 4; align-self: start; gap: 0; position: relative; border-right: 1px solid #59625f; border-bottom: 1px solid #59625f; }
+    #wasteland-inventory-concept .wi-slot { background: rgba(63,72,69,.43); border-left: 1px solid #59625f; border-top: 1px solid #59625f; min-width: 0; }
+    #wasteland-inventory-concept .wi-item { z-index: 2; border: 1px solid #c08232; background: linear-gradient(140deg, rgba(116,81,35,.96), rgba(52,48,38,.98)); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 4px; color: #fff5df; position: relative; overflow: hidden; }
+    #wasteland-inventory-concept .wi-item svg { width: 40%; max-height: 55%; fill: none; stroke: currentColor; stroke-width: 1.8; }
+    #wasteland-inventory-concept .wi-item small { color: #f0d8b3; }
+    #wasteland-inventory-concept .wi-item-water { grid-column: 1; grid-row: 1; }
+    #wasteland-inventory-concept .wi-item-bread { grid-column: 2; grid-row: 1; }
+    #wasteland-inventory-concept .wi-item-hammer { grid-column: 3; grid-row: 1 / span 2; }
+    #wasteland-inventory-concept .wi-item-crowbar { grid-column: 1; grid-row: 2 / span 3; }
+    #wasteland-inventory-concept .wi-item-stone { grid-column: 2; grid-row: 2; }
+    #wasteland-inventory-concept .wi-item-wood { grid-column: 2; grid-row: 3; }
+    #wasteland-inventory-concept .wi-item-plate { grid-column: 3; grid-row: 3; }
+    #wasteland-inventory-concept .wi-gear { display: flex; flex-direction: column; gap: 8px; }
+    #wasteland-inventory-concept .wi-gear-label { color: #9ea9a5; }
+    #wasteland-inventory-concept .wi-gear-slot { aspect-ratio: 1; border: 1px dashed #64706d; background: rgba(47,57,55,.32); display: grid; place-items: center; color: #87928f; text-align: center; }
+    #wasteland-inventory-concept .wi-gear-slot.active { border-style: solid; border-color: #8b693b; color: #e7d4b5; }
+    #wasteland-inventory-concept .wi-crafting { display: grid; grid-template-columns: minmax(210px,.88fr) minmax(250px,1.12fr); min-height: 388px; }
+    #wasteland-inventory-concept .wi-recipes { padding: 14px; border-right: 1px solid #394342; }
+    #wasteland-inventory-concept .wi-filter-row { display: flex; gap: 6px; margin-bottom: 12px; }
+    #wasteland-inventory-concept .wi-filter { min-height: 38px; flex: 1; border: 1px solid #4c5755; background: #1e2827; color: #bdc6c2; cursor: pointer; }
+    #wasteland-inventory-concept .wi-filter.active { border-color: #ca8431; color: #ffdca7; }
+    #wasteland-inventory-concept .wi-recipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    #wasteland-inventory-concept .wi-recipe { aspect-ratio: 1; border: 1px solid #4d5856; background: #26302e; color: #d3dbd7; cursor: pointer; display: grid; place-items: center; position: relative; }
+    #wasteland-inventory-concept .wi-recipe.selected { border: 2px solid #de9538; background: #3c3528; }
+    #wasteland-inventory-concept .wi-recipe.locked { opacity: .4; }
+    #wasteland-inventory-concept .wi-recipe svg { width: 38%; fill: none; stroke: currentColor; stroke-width: 1.7; }
+    #wasteland-inventory-concept .wi-detail { padding: 18px; display: flex; flex-direction: column; }
+    #wasteland-inventory-concept .wi-detail h2 { margin: 0 0 4px; font-size: 1.25rem; font-weight: 500; }
+    #wasteland-inventory-concept .wi-kicker { color: #d99a49; letter-spacing: .1em; }
+    #wasteland-inventory-concept .wi-description { color: #b7c0bc; margin: 16px 0; }
+    #wasteland-inventory-concept .wi-material { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #313b39; }
+    #wasteland-inventory-concept .wi-ok { color: #91c997; }
+    #wasteland-inventory-concept .wi-tool { color: #e4bb78; }
+    #wasteland-inventory-concept .wi-action { margin-top: auto; min-height: 46px; border: 1px solid #e49a3b; background: #b66b18; color: #fff8eb; cursor: pointer; font-weight: 500; }
+    #wasteland-inventory-concept .wi-container { display: none; grid-template-columns: minmax(250px,1fr); min-height: 388px; }
+    #wasteland-inventory-concept .wi-container-inner { padding: 16px; }
+    #wasteland-inventory-concept .wi-search-status { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; color: #c4ccc8; }
+    #wasteland-inventory-concept .wi-search-line { height: 4px; background: #33403e; overflow: hidden; margin-bottom: 16px; }
+    #wasteland-inventory-concept .wi-search-fill { width: 54%; height: 100%; background: #d1842e; transition: width .25s ease; }
+    #wasteland-inventory-concept .wi-loot-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(5, minmax(0, 1fr)); width: min(100%, 430px); aspect-ratio: 4 / 5; gap: 0; border-right: 1px solid #4e5957; border-bottom: 1px solid #4e5957; }
+    #wasteland-inventory-concept .wi-loot-cell { border-left: 1px solid #4e5957; border-top: 1px solid #4e5957; background: rgba(56,66,63,.42); display: grid; place-items: center; color: #909b97; }
+    #wasteland-inventory-concept .wi-loot-cell.found { color: #f3ddb9; background: #40392d; border-color: #8e6835; }
+    #wasteland-inventory-concept .wi-loot-cell.searching { background: linear-gradient(110deg,#313b39 30%,#53605d 50%,#313b39 70%); background-size: 220% 100%; animation: wi-scan 1.3s linear infinite; }
+    #wasteland-inventory-concept .wi-bottom { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); width: min(620px, calc(100% - 40px)); }
+    #wasteland-inventory-concept .wi-survival { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 auto 8px; width: 62%; }
+    #wasteland-inventory-concept .wi-meter { height: 8px; background: rgba(26,32,31,.88); border: 1px solid #4a5452; }
+    #wasteland-inventory-concept .wi-meter &gt; span { display: block; height: 100%; }
+    #wasteland-inventory-concept .wi-food { width: 68%; background: #bd7b31; }
+    #wasteland-inventory-concept .wi-water { width: 43%; background: #4e96a7; }
+    #wasteland-inventory-concept .wi-hotbar { display: grid; grid-template-columns: repeat(2, 1.08fr) 10px repeat(4, 1fr); gap: 5px; }
+    #wasteland-inventory-concept .wi-hot-divider { width: 1px; height: 44px; align-self: center; justify-self: center; background: #65706d; }
+    #wasteland-inventory-concept .wi-hot-slot { height: 62px; border: 1px solid #66706d; background: rgba(20,27,27,.94); position: relative; display: grid; place-items: center; color: #bfc8c4; }
+    #wasteland-inventory-concept .wi-hot-slot.active { border: 2px solid #e4a14e; background: rgba(64,51,33,.96); }
+    #wasteland-inventory-concept .wi-hot-slot.hand { border-color: #9a713e; background: rgba(49,42,32,.96); }
+    #wasteland-inventory-concept .wi-hand-label { position: absolute; right: 6px; top: 4px; color: #d0ad79; }
+    #wasteland-inventory-concept .wi-key { position: absolute; top: 4px; left: 6px; color: #89938f; }
+    #wasteland-inventory-concept .wi-help { position: absolute; right: 26px; bottom: 24px; color: #aeb7b3; }
+    #wasteland-inventory-concept .wi-help kbd { padding: 3px 7px; border: 1px solid #66706d; background: #1d2524; color: #edf2ef; }
+    @keyframes wi-scan { to { background-position: -220% 0; } }
+    @media (prefers-reduced-motion: reduce) { #wasteland-inventory-concept .wi-loot-cell.searching { animation: none; } }
+    @media (max-width: 760px) {
+      #wasteland-inventory-concept .wi-main { grid-template-columns: 1fr; }
+      #wasteland-inventory-concept .wi-crafting { grid-template-columns: 1fr; }
+      #wasteland-inventory-concept .wi-recipes { border-right: 0; border-bottom: 1px solid #394342; }
+      #wasteland-inventory-concept .wi-shell { padding-inline: 12px; padding-bottom: 112px; }
+      #wasteland-inventory-concept .wi-help { display: none; }
+    }
+  &lt;/style&gt;
+  &lt;div class=&quot;wi-world&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;wi-shell&quot;&gt;
+    &lt;header class=&quot;wi-topbar&quot;&gt;
+      &lt;div class=&quot;wi-brand&quot;&gt;WASTELAND / T0&lt;/div&gt;
+      &lt;div class=&quot;wi-mode-switch&quot; aria-label=&quot;界面状态预览&quot;&gt;
+        &lt;button type=&quot;button&quot; data-mode=&quot;craft&quot; aria-pressed=&quot;true&quot;&gt;TAB 背包&lt;/button&gt;
+        &lt;button type=&quot;button&quot; data-mode=&quot;loot&quot; aria-pressed=&quot;false&quot;&gt;搜刮容器&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;main class=&quot;wi-main&quot;&gt;
+      &lt;section class=&quot;wi-panel&quot; aria-label=&quot;玩家背包&quot;&gt;
+        &lt;header class=&quot;wi-panel-head&quot;&gt;&lt;span class=&quot;wi-panel-title&quot;&gt;背包 · I级&lt;/span&gt;&lt;span class=&quot;wi-head-actions&quot;&gt;&lt;span class=&quot;wi-capacity&quot;&gt;6 / 12 格&lt;/span&gt;&lt;button class=&quot;wi-craft-toggle&quot; id=&quot;wi-craft-toggle&quot; type=&quot;button&quot; aria-pressed=&quot;false&quot;&gt;制作&lt;/button&gt;&lt;/span&gt;&lt;/header&gt;
+        &lt;div class=&quot;wi-inventory-body&quot;&gt;
+          &lt;div class=&quot;wi-grid&quot; aria-label=&quot;三列四行背包格&quot;&gt;
+            &lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;
+            &lt;div class=&quot;wi-item wi-item-bread&quot; aria-label=&quot;一袋面包，一乘一&quot;&gt;&lt;span&gt;面包&lt;/span&gt;&lt;small&gt;1×1&lt;/small&gt;&lt;/div&gt;
+            &lt;div class=&quot;wi-item wi-item-hammer&quot; aria-label=&quot;羊角锤，一乘二&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M14 5l5-2 2 3-5 3m-2-4L5 19m7-12l5 5&quot;/&gt;&lt;/svg&gt;&lt;small&gt;羊角锤 1×2&lt;/small&gt;&lt;/div&gt;
+            &lt;div class=&quot;wi-item wi-item-stone&quot;&gt;&lt;span&gt;石头&lt;/span&gt;&lt;small&gt;1×1&lt;/small&gt;&lt;/div&gt;
+            &lt;div class=&quot;wi-item wi-item-wood&quot;&gt;&lt;span&gt;木材&lt;/span&gt;&lt;small&gt;1×1&lt;/small&gt;&lt;/div&gt;
+            &lt;div class=&quot;wi-item wi-item-plate&quot;&gt;&lt;span&gt;铁板&lt;/span&gt;&lt;small&gt;1×1&lt;/small&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;aside class=&quot;wi-gear&quot; aria-label=&quot;装备与背包升级位&quot;&gt;
+            &lt;span class=&quot;wi-gear-label&quot;&gt;装备&lt;/span&gt;
+            &lt;div class=&quot;wi-gear-slot active&quot;&gt;I级背包&lt;br&gt;3×4&lt;/div&gt;
+            &lt;div class=&quot;wi-gear-slot&quot;&gt;服装位&lt;br&gt;预留&lt;/div&gt;
+            &lt;div class=&quot;wi-gear-slot&quot;&gt;工具位&lt;br&gt;预留&lt;/div&gt;
+          &lt;/aside&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+      &lt;section class=&quot;wi-panel&quot; id=&quot;wi-right-craft&quot; aria-label=&quot;制作界面&quot; hidden&gt;
+        &lt;header class=&quot;wi-panel-head&quot;&gt;&lt;span class=&quot;wi-panel-title&quot;&gt;制作&lt;/span&gt;&lt;span class=&quot;wi-capacity&quot;&gt;已解锁 3&lt;/span&gt;&lt;/header&gt;
+        &lt;div class=&quot;wi-crafting&quot;&gt;
+          &lt;div class=&quot;wi-recipes&quot;&gt;
+            &lt;div class=&quot;wi-filter-row&quot;&gt;&lt;button class=&quot;wi-filter active&quot; type=&quot;button&quot;&gt;全部&lt;/button&gt;&lt;button class=&quot;wi-filter&quot; type=&quot;button&quot;&gt;工具&lt;/button&gt;&lt;button class=&quot;wi-filter&quot; type=&quot;button&quot;&gt;建造&lt;/button&gt;&lt;/div&gt;
+            &lt;div class=&quot;wi-recipe-grid&quot;&gt;
+              &lt;button class=&quot;wi-recipe selected&quot; type=&quot;button&quot; aria-label=&quot;简易撬棍配方&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;&lt;path d=&quot;M8 3c2 1 3 1 5 0M10 4l5 15m0 0c1 2 3 2 4 0&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;
+              &lt;button class=&quot;wi-recipe&quot; type=&quot;button&quot; aria-label=&quot;一级背包配方&quot;&gt;背包&lt;/button&gt;
+              &lt;button class=&quot;wi-recipe&quot; type=&quot;button&quot; aria-label=&quot;地基建材配方&quot;&gt;地基&lt;/button&gt;
+              &lt;button class=&quot;wi-recipe locked&quot; type=&quot;button&quot; aria-label=&quot;未解锁配方&quot;&gt;锁定&lt;/button&gt;
+              &lt;button class=&quot;wi-recipe locked&quot; type=&quot;button&quot; aria-label=&quot;未解锁配方&quot;&gt;锁定&lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;article class=&quot;wi-detail&quot;&gt;
+            &lt;span class=&quot;wi-kicker&quot;&gt;工具 / 简易&lt;/span&gt;&lt;h2&gt;简易撬棍&lt;/h2&gt;
+            &lt;p class=&quot;wi-description&quot;&gt;用于撬开汽车车门、后备箱及部分锁闭容器。&lt;/p&gt;
+            &lt;div class=&quot;wi-material&quot;&gt;&lt;span&gt;铁棍&lt;/span&gt;&lt;strong class=&quot;wi-ok&quot;&gt;1 / 1&lt;/strong&gt;&lt;/div&gt;
+            &lt;div class=&quot;wi-material&quot;&gt;&lt;span&gt;加工工具：石头&lt;/span&gt;&lt;strong class=&quot;wi-tool&quot;&gt;可用&lt;/strong&gt;&lt;/div&gt;
+            &lt;div class=&quot;wi-material&quot;&gt;&lt;span&gt;制作时间&lt;/span&gt;&lt;strong&gt;6 秒&lt;/strong&gt;&lt;/div&gt;
+            &lt;button class=&quot;wi-action&quot; type=&quot;button&quot;&gt;开始制作&lt;/button&gt;
+          &lt;/article&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+      &lt;section class=&quot;wi-panel&quot; id=&quot;wi-right-loot&quot; aria-label=&quot;容器搜刮界面&quot; hidden&gt;
+        &lt;header class=&quot;wi-panel-head&quot;&gt;&lt;span class=&quot;wi-panel-title&quot;&gt;木制储物柜&lt;/span&gt;&lt;span class=&quot;wi-capacity&quot;&gt;搜索中&lt;/span&gt;&lt;/header&gt;
+        &lt;div class=&quot;wi-container&quot;&gt;
+          &lt;div class=&quot;wi-container-inner&quot;&gt;
+            &lt;div class=&quot;wi-search-status&quot;&gt;&lt;span&gt;4×5容器 · 逐件搜索 · 左上至右下&lt;/span&gt;&lt;span id=&quot;wi-progress-label&quot;&gt;54%&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;wi-search-line&quot;&gt;&lt;div class=&quot;wi-search-fill&quot; id=&quot;wi-search-fill&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+            &lt;div class=&quot;wi-loot-grid&quot; aria-label=&quot;容器内容&quot;&gt;
+              &lt;div class=&quot;wi-loot-cell found&quot;&gt;铁棍&lt;/div&gt;&lt;div class=&quot;wi-loot-cell found&quot;&gt;饮用水&lt;/div&gt;&lt;div class=&quot;wi-loot-cell searching&quot;&gt;…&lt;/div&gt;&lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;
+              &lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;&lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;&lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;&lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;
+              &lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;&lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;&lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;&lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;
+              &lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;&lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;&lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;&lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;
+              &lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;&lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;&lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;&lt;div class=&quot;wi-loot-cell&quot;&gt;?&lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/section&gt;
+    &lt;/main&gt;
+    &lt;div class=&quot;wi-bottom&quot; aria-label=&quot;饥饿口渴与六格快捷栏&quot;&gt;
+      &lt;div class=&quot;wi-survival&quot;&gt;&lt;div class=&quot;wi-meter&quot; aria-label=&quot;饥饿68%&quot;&gt;&lt;span class=&quot;wi-food&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;wi-meter&quot; aria-label=&quot;口渴43%&quot;&gt;&lt;span class=&quot;wi-water&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;
+      &lt;div class=&quot;wi-hotbar&quot;&gt;
+        &lt;div class=&quot;wi-hot-slot hand active&quot;&gt;&lt;span class=&quot;wi-key&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;wi-hand-label&quot;&gt;左手&lt;/span&gt;撬棍&lt;/div&gt;&lt;div class=&quot;wi-hot-slot hand&quot;&gt;&lt;span class=&quot;wi-key&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;wi-hand-label&quot;&gt;右手&lt;/span&gt;饮用水&lt;/div&gt;&lt;span class=&quot;wi-hot-divider&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;div class=&quot;wi-hot-slot&quot;&gt;&lt;span class=&quot;wi-key&quot;&gt;3&lt;/span&gt;面包&lt;/div&gt;&lt;div class=&quot;wi-hot-slot&quot;&gt;&lt;span class=&quot;wi-key&quot;&gt;4&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;wi-hot-slot&quot;&gt;&lt;span class=&quot;wi-key&quot;&gt;5&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;wi-hot-slot&quot;&gt;&lt;span class=&quot;wi-key&quot;&gt;6&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;wi-help&quot;&gt;&lt;kbd&gt;R&lt;/kbd&gt; 旋转长条物品　&lt;kbd&gt;ESC&lt;/kbd&gt; 关闭&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+    (() =&gt; {
+      const root = document.getElementById(&#x27;wasteland-inventory-concept&#x27;);
+      const main = root.querySelector(&#x27;.wi-main&#x27;);
+      const buttons = root.querySelectorAll(&#x27;[data-mode]&#x27;);
+      const craft = root.querySelector(&#x27;#wi-right-craft&#x27;);
+      const loot = root.querySelector(&#x27;#wi-right-loot&#x27;);
+      const craftToggle = root.querySelector(&#x27;#wi-craft-toggle&#x27;);
+      const setCraftOpen = (isOpen) =&gt; {
+        craft.hidden = !isOpen;
+        craftToggle.setAttribute(&#x27;aria-pressed&#x27;, String(isOpen));
+        craftToggle.textContent = isOpen ? &#x27;收起制作&#x27; : &#x27;制作&#x27;;
+        main.classList.toggle(&#x27;is-solo&#x27;, !isOpen);
+      };
+      main.classList.add(&#x27;is-solo&#x27;);
+      craftToggle.addEventListener(&#x27;click&#x27;, () =&gt; setCraftOpen(craftToggle.getAttribute(&#x27;aria-pressed&#x27;) !== &#x27;true&#x27;));
+      buttons.forEach((button) =&gt; button.addEventListener(&#x27;click&#x27;, () =&gt; {
+        const isLoot = button.dataset.mode === &#x27;loot&#x27;;
+        buttons.forEach((peer) =&gt; peer.setAttribute(&#x27;aria-pressed&#x27;, String(peer === button)));
+        if (isLoot) setCraftOpen(false);
+        loot.hidden = !isLoot;
+        loot.querySelector(&#x27;.wi-container&#x27;).style.display = isLoot ? &#x27;grid&#x27; : &#x27;none&#x27;;
+        craftToggle.disabled = isLoot;
+        main.classList.toggle(&#x27;is-solo&#x27;, !isLoot &amp;&amp; craft.hidden);
+      }));
+      if (window.location.hash === &#x27;#loot&#x27;) root.querySelector(&#x27;[data-mode=&quot;loot&quot;]&#x27;).click();
+    })();
+  &lt;/script&gt;
+&lt;/section&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handleLeave = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>
