@@ -1,2 +1,3 @@
 recipe_id,display_name,inputs,outputs,byproducts,process_tag,tool_tag,duration_seconds,energy_type,energy_amount,unlock_milestone,balance_status
 craft_prybar_crude,制作简易撬棍,material_iron_rod:1;material_stone:1,tool_prybar_crude:1,,Process.Handcraft,,,,,t0_1,concept
+craft_foundation_basic,制作地基组件,material_iron_plate:10,building_foundation_basic:1,,Process.Hammering,Tool.Hammer,,,,tutorial_5,concept

@@ -1,1 +1,8 @@
 machine_id,display_name,machine_type,build_cost,process_tags,input_slots,output_slots,energy_accept_tags,energy_output_tags,internal_capacity,throughput_per_second,unlock_milestone,balance_status
+building_research_table,研究台,Research,,Process.Research,1,0,,,0,0,t0_3,concept
+building_workstation_basic,初级工作站,Workbench,,Process.Handcraft;Process.Assembly;Process.ManualMetalwork,4,1,,,0,0,t0_3,concept
+building_storage_basic,基础储物箱,Storage,,Process.Storage,0,0,,,0,0,t0_3,concept
+building_garden_room_small,小型园艺室,Gardening,,Process.Gardening,1,0,Fluid.Water,,0,0,t0_5,concept
+machine_boiler_simple,简易锅炉,EnergyProduction,,Process.Boiling,2,0,,Energy.Steam.LowPressure,0,0,t0_5,concept
+machine_steam_generator,蒸汽发电机,EnergyConversion,,Process.PowerGeneration,0,0,Energy.Steam.LowPressure,Energy.Electricity.Basic,0,0,t0_5,concept
+machine_water_pump_electric,电动水泵,FluidTransport,,Process.Pumping,0,0,Energy.Electricity.Basic,Fluid.Water,0,0,t0_5,concept
