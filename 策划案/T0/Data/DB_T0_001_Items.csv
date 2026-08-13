@@ -42,6 +42,9 @@ material_charcoal,木炭,Material;Material.Carbon.Source;Fuel,1,1,1,FALSE,1,,0,t
 material_coal,煤炭,Material;Material.Carbon.Source;Fuel,1,1,1,FALSE,1,,0,tbd,T0工厂餐厅搜刮且T1矿场开采
 material_carbon_dust,碳粉,Material;Material.Carbon;Form.Powder,1,1,1,FALSE,0,,0,tbd,木炭或煤炭研磨获得
 material_coke_brick,焦炉砖,Material;Material.Building,1,1,1,FALSE,0,,0,tbd,石头与泥土制作
+material_pipe_simple,简易管道,Material;Connection.Fluid;Measure.Meter,100,1,1,FALSE,0,,0,t0_5,每个数量代表1米且每格最多100米可运输所有Fluid
+material_wire_copper_insulated,绝缘铜导线,Material;Connection.Electric;Measure.Meter,100,1,1,FALSE,0,,0,t0_5,每个数量代表1米且每格最多100米
+power_battery_disposable,一次性电池,Consumable;PowerSource.Portable,1,1,1,FALSE,0,,0,t0_5,不可合成充电或维修且仅能搜索获得
 component_vacuum_tube,电子管,Component;Component.Electronic.Tier2,1,1,1,FALSE,0,,0,tbd,T0电子路线统一使用电子管
 component_resistor,电阻,Component;Component.Electronic.Tier2,1,1,1,FALSE,0,,0,tbd,铜线与碳粉制作
 component_circuit_substrate,电路基板,Component;Component.Electronic.Tier2,1,1,1,FALSE,0,,0,tbd,木板橡胶铜线与铜板制作
@@ -53,6 +56,7 @@ building_workstation_basic,初级工作站,Building;Building.Facility.Crafting,1
 building_storage_basic,基础储物箱,Building;Building.Facility.Storage,1,1,1,FALSE,0,,0,t0_3,配方待定
 machine_earth_coke_oven,土焦炉,Building;Machine;Machine.Pyrolysis,1,1,1,FALSE,0,,0,t0_3,焦炉砖28建造且不需要工具
 building_garden_room_small,小型园艺室,Building;Building.Facility.Gardening,1,1,1,FALSE,0,,0,t0_5,配方待定
+building_groundwater_well,地下水井,Building;Building.Facility.FluidSource,1,1,1,FALSE,0,,0,t0_5,郊外钻探后提供永久Fluid.Water
 machine_boiler_simple,简易锅炉,Building;Machine;Machine.SteamProducer,1,1,1,FALSE,0,,0,t0_5,配方待定
 machine_steam_generator,蒸汽发电机,Building;Machine;Machine.PowerGenerator,1,1,1,FALSE,0,,0,t0_5,配方待定
 machine_water_pump_electric,电动水泵,Building;Machine;Machine.FluidPump,1,1,1,FALSE,0,,0,t0_5,T0时代标志设备
