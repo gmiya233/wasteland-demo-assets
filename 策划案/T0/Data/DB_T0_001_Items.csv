@@ -50,7 +50,7 @@ component_resistor,电阻,Component;Component.Electronic.Tier2,1,1,1,FALSE,0,,0,
 component_circuit_substrate,电路基板,Component;Component.Electronic.Tier2,1,1,1,FALSE,0,,0,tbd,木板橡胶铜线与铜板制作
 component_machine_frame_basic,基础机器框架,Component;Component.Machine.Tier2,1,1,1,FALSE,0,,0,tbd,配方待定
 component_circuit_board,电路板,Component;Component.Electronic.Tier3,1,1,1,FALSE,0,,0,tbd,电子管电阻基板与锡线装配
-building_foundation_basic,基础地基,Building;Building.Structure,1,1,1,FALSE,0,,0,tutorial_5,基地锚点
+building_foundation_basic,基础地基,Building;Building.Structure,1,1,1,FALSE,0,,0,t0_3,自由探索后的基地锚点
 building_research_table,研究台,Building;Building.Facility.Research,1,1,1,FALSE,0,,0,t0_3,配方待定
 building_workstation_basic,初级工作站,Building;Building.Facility.Crafting,1,1,1,FALSE,0,,0,t0_3,配方待定
 building_storage_basic,基础储物箱,Building;Building.Facility.Storage,1,1,1,FALSE,0,,0,t0_3,配方待定

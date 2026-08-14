@@ -34,5 +34,5 @@ craft_vacuum_tube,制作电子管,material_glass:1;material_iron_wire:1;material
 craft_resistor,制作电阻,material_copper_wire:2;material_carbon_dust:1,component_resistor:1,,Process.Electronics,,,,,tbd,concept
 craft_circuit_substrate,制作电路基板,material_wood_board:1;material_insulating_rubber:3;material_copper_wire:3;material_copper_plate:1,component_circuit_substrate:1,,Process.Electronics,,,,,tbd,concept
 craft_circuit_board,制作电路板,component_vacuum_tube:1;component_resistor:1;component_circuit_substrate:1;material_tin_wire:2,component_circuit_board:1,,Process.Electronics,,,,,tbd,concept
-craft_foundation_basic,制作地基组件,material_iron_plate:10,building_foundation_basic:1,,Process.Hammering,Tool.Hammer:1,,,,tutorial_5,confirmed
+craft_foundation_basic,制作地基组件,material_iron_plate:10,building_foundation_basic:1,,Process.Hammering,Tool.Hammer:1,,,,t0_3,confirmed
 craft_pipe_simple,制作1米简易管道,material_iron_rod:1;material_iron_plate:1;material_iron_screw:1,material_pipe_simple:1,,Process.Toolmaking,Tool.Hammer:1;Tool.Screwdriver:1,,,,t0_5,confirmed
