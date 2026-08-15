@@ -1,0 +1,10 @@
+zone_id,display_name,parent_zone,travel_time_min_minutes,travel_time_max_minutes,build_allowed,resource_tags,required_instances,t0_generated,balance_status,notes
+city_spawn,固定出生城市,,0,0,FALSE,Resource.Urban,1,TRUE,confirmed,固定六区与32地块且提供2至3个公路连接口
+road_network,程序化公路网络,city_spawn,0,0,PARTIAL,Resource.Transport,1,TRUE,draft,从出生城市连接口持续扩展且作为城外地点父级
+city_fringe,城市边缘过渡,city_spawn,0,1.5,FALSE,Resource.None,1,TRUE,draft,每个启用出口先生成低密度过渡
+base_candidate_near,近路基地候选区,city_fringe,1.5,2.5,TRUE,Resource.Soil,1,TRUE,draft,出生城市主出口方向保证生成
+base_candidate_far,远路基地候选区,city_fringe,2.5,3.5,TRUE,Resource.Soil;Resource.Groundwater,1,TRUE,draft,出生城市主出口方向保证生成
+road_resource_belt,沿路郊外资源带,road_network,1.5,6,PARTIAL,Resource.Soil;Resource.Wood;Resource.Groundwater,1,TRUE,draft,随公路分块生成并避开预留走廊
+stone_quarry_node,石料矿区节点,road_network,3,7,FALSE,Resource.Stone,1,TRUE,draft,相邻城市间至少一个候选且由支路连接
+sparse_roadside_poi,稀疏沿路地点,road_network,0.75,1.5,PARTIAL,Resource.Mixed,0,TRUE,draft,候选间隔且只有35%生成实际地点
+generated_city_node,后续城市节点,road_network,6,10,FALSE,Resource.Urban,1,TRUE,draft,required_instances表示每条完成的城际主路线至少一个

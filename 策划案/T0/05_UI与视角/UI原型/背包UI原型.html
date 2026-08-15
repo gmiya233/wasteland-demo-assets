@@ -921,7 +921,7 @@ html&gt;body{padding:0}&lt;/style&gt;
     #wasteland-inventory-concept .wi-craft-toggle { min-height: 36px; padding: 0 14px; border: 1px solid #b8792d; background: #3e3426; color: #f3d6aa; cursor: pointer; }
     #wasteland-inventory-concept .wi-craft-toggle[aria-pressed=&quot;true&quot;] { background: #b66b18; border-color: #e9a23d; color: #fff7e7; }
     #wasteland-inventory-concept .wi-inventory-body { display: grid; grid-template-columns: 1fr 126px; gap: 16px; padding: 16px; }
-    #wasteland-inventory-concept .wi-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(4, minmax(0, 1fr)); width: 100%; aspect-ratio: 3 / 4; align-self: start; gap: 0; position: relative; border-right: 1px solid #59625f; border-bottom: 1px solid #59625f; }
+    #wasteland-inventory-concept .wi-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(5, minmax(0, 1fr)); width: 100%; aspect-ratio: 4 / 5; align-self: start; gap: 0; position: relative; border-right: 1px solid #59625f; border-bottom: 1px solid #59625f; }
     #wasteland-inventory-concept .wi-slot { background: rgba(63,72,69,.43); border-left: 1px solid #59625f; border-top: 1px solid #59625f; min-width: 0; }
     #wasteland-inventory-concept .wi-item { z-index: 2; border: 1px solid #c08232; background: linear-gradient(140deg, rgba(116,81,35,.96), rgba(52,48,38,.98)); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 4px; color: #fff5df; position: relative; overflow: hidden; }
     #wasteland-inventory-concept .wi-item svg { width: 40%; max-height: 55%; fill: none; stroke: currentColor; stroke-width: 1.8; }
@@ -1000,10 +1000,12 @@ html&gt;body{padding:0}&lt;/style&gt;
     &lt;/header&gt;
     &lt;main class=&quot;wi-main&quot;&gt;
       &lt;section class=&quot;wi-panel&quot; aria-label=&quot;玩家背包&quot;&gt;
-        &lt;header class=&quot;wi-panel-head&quot;&gt;&lt;span class=&quot;wi-panel-title&quot;&gt;背包 · I级&lt;/span&gt;&lt;span class=&quot;wi-head-actions&quot;&gt;&lt;span class=&quot;wi-capacity&quot;&gt;6 / 12 格&lt;/span&gt;&lt;button class=&quot;wi-craft-toggle&quot; id=&quot;wi-craft-toggle&quot; type=&quot;button&quot; aria-pressed=&quot;false&quot;&gt;制作&lt;/button&gt;&lt;/span&gt;&lt;/header&gt;
+        &lt;header class=&quot;wi-panel-head&quot;&gt;&lt;span class=&quot;wi-panel-title&quot;&gt;背包 · I级&lt;/span&gt;&lt;span class=&quot;wi-head-actions&quot;&gt;&lt;span class=&quot;wi-capacity&quot;&gt;6 / 20 格&lt;/span&gt;&lt;button class=&quot;wi-craft-toggle&quot; id=&quot;wi-craft-toggle&quot; type=&quot;button&quot; aria-pressed=&quot;false&quot;&gt;制作&lt;/button&gt;&lt;/span&gt;&lt;/header&gt;
         &lt;div class=&quot;wi-inventory-body&quot;&gt;
-          &lt;div class=&quot;wi-grid&quot; aria-label=&quot;三列四行背包格&quot;&gt;
+          &lt;div class=&quot;wi-grid&quot; aria-label=&quot;四列五行背包格&quot;&gt;
             &lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;
             &lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;
             &lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;
             &lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;&lt;span class=&quot;wi-slot&quot;&gt;&lt;/span&gt;
@@ -1015,7 +1017,7 @@ html&gt;body{padding:0}&lt;/style&gt;
           &lt;/div&gt;
           &lt;aside class=&quot;wi-gear&quot; aria-label=&quot;装备与背包升级位&quot;&gt;
             &lt;span class=&quot;wi-gear-label&quot;&gt;装备&lt;/span&gt;
-            &lt;div class=&quot;wi-gear-slot active&quot;&gt;I级背包&lt;br&gt;3×4&lt;/div&gt;
+            &lt;div class=&quot;wi-gear-slot active&quot;&gt;I级背包&lt;br&gt;4×5&lt;/div&gt;
             &lt;div class=&quot;wi-gear-slot&quot;&gt;服装位&lt;br&gt;预留&lt;/div&gt;
             &lt;div class=&quot;wi-gear-slot&quot;&gt;工具位&lt;br&gt;预留&lt;/div&gt;
           &lt;/aside&gt;

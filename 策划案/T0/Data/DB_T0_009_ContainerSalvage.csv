@@ -1,0 +1,13 @@
+salvage_id,container_tag,display_name,tool_requirements,tool_durability_cost,outputs,requires_search_complete,requires_empty,balance_status,notes
+salvage_wardrobe,Container.Wardrobe,拆除住宅衣柜,Tool.Hammer:1;Tool.Saw:1,1,material_wood:2,TRUE,TRUE,draft,木制柜体
+salvage_res_drawer,Container.Drawer,拆除住宅抽屉家具,Tool.Hammer:1,1,material_wood:1,TRUE,TRUE,draft,包含承载抽屉的小型家具
+salvage_refrigerator,Container.Refrigerator,拆除冷藏柜,Tool.Hammer:1;Tool.Screwdriver:1;Tool.Wrench:1,1,material_iron_plate:2;material_copper_wire:1;material_insulating_rubber:1,TRUE,TRUE,draft,回收外壳短线束和密封材料
+salvage_cash_drawer,Container.CashDrawer,拆除收银台抽屉,Tool.Hammer:1;Tool.Screwdriver:1,1,material_iron_plate:1,TRUE,TRUE,draft,金属抽屉外壳
+salvage_staff_locker,Container.StaffLocker,拆除员工储物柜,Tool.Hammer:1;Tool.Screwdriver:1,1,material_iron_plate:1,TRUE,TRUE,draft,便利店和餐厅共用
+salvage_kitchen_cabinet,Container.KitchenCabinet,拆除厨房柜,Tool.Hammer:1;Tool.Saw:1,1,material_wood:2,TRUE,TRUE,draft,当前按木制柜体处理
+salvage_kitchen_drawer,Container.KitchenDrawer,拆除厨房抽屉,Tool.Hammer:1;Tool.Screwdriver:1,1,material_iron_plate:1,TRUE,TRUE,draft,当前按金属厨房抽屉处理
+salvage_toolbox,Container.Toolbox,拆除金属工具箱,Tool.Hammer:1,1,material_iron_plate:1,TRUE,TRUE,draft,破坏性拆取
+salvage_metal_locker,Container.MetalLocker,拆除金属储物柜,Tool.Hammer:1;Tool.Screwdriver:1,1,material_iron_plate:2;material_iron_rod:1,TRUE,TRUE,draft,回收柜板与支撑件
+salvage_material_box,Container.MaterialBox,拆除金属材料箱,Tool.Hammer:1,1,material_iron_plate:1,TRUE,TRUE,draft,地基材料稳定补足来源
+salvage_workbench_drawer,Container.WorkbenchDrawer,拆除工作台抽屉,Tool.Hammer:1;Tool.Screwdriver:1,1,material_iron_plate:1,TRUE,TRUE,draft,不拆除整张工作台
+salvage_office_drawer,Container.OfficeDrawer,拆除办公抽屉家具,Tool.Hammer:1,1,material_wood:1,TRUE,TRUE,draft,当前按木制家具处理

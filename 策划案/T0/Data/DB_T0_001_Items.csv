@@ -9,6 +9,9 @@ tool_wire_cutter_iron,铁剪线钳,Tool;Tool.WireCutter,1,1,1,FALSE,0,Tool.WireC
 tool_grinding_bowl,研磨碗,Tool;Tool.Grinding.Manual,1,1,1,FALSE,0,Tool.Grinding.Manual,128,tbd,将金属锭或碳源研磨为粉末
 tool_pickaxe_iron,铁镐,Tool;Tool.Mining.Stone,1,1,1,FALSE,0,Tool.Mining.Stone,128,tbd,在建筑石料矿场采集石头
 tool_shovel_iron,铁铲,Tool;Tool.Digging.Soil,1,1,1,FALSE,0,Tool.Digging.Soil,128,tbd,在有效土壤表面采集泥土
+equipment_backpack_t1,一级背包,Equipment;Equipment.Backpack;Container.Portable,1,2,2,FALSE,0,,0,t0_1,内部4×5共20格且禁止放入其他背包
+equipment_backpack_t2,二级背包,Equipment;Equipment.Backpack;Container.Portable,1,2,2,FALSE,0,,0,tbd,内部5×6共30格且升级配方待定
+equipment_backpack_t3,三级背包,Equipment;Equipment.Backpack;Container.Portable,1,2,2,FALSE,0,,0,tbd,内部6×7共42格且升级配方待定
 food_bread_bagged,一袋面包,Consumable;Consumable.Food,1,1,1,FALSE,0,,0,t0_1,开局固定补给
 food_canned_meat,肉类罐头,Consumable;Consumable.Food,1,1,1,FALSE,0,,0,tbd,城区战利品
 drink_water_bottled,一瓶饮用水,Consumable;Consumable.Drink,1,1,1,FALSE,0,,0,t0_1,开局固定补给
