@@ -1,0 +1,4 @@
+rule_id,area_tag,anchor_type,candidate_count_per_anchor,spawn_chance,vehicle_layout_id,exclude_fixed_tutorial,balance_status,notes
+spawn_city_residential_car,Area.SpawnCity.Residential,Anchor.ResidentialBuilding,1,20,car_sedan,TRUE,draft,出生城市普通住宅附近独立判定
+generated_city_residential_car,Area.GeneratedCity.Residential,Anchor.ResidentialBuilding,1,20,car_sedan,TRUE,draft,后续城市普通住宅附近独立判定且无新手住宅
+roadside_house_car,Area.Roadside,Anchor.IsolatedResidential,1,10,car_sedan,TRUE,draft,城外孤立住宅附近概率低于城市住宅

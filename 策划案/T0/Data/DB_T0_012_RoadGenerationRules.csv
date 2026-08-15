@@ -1,0 +1,17 @@
+rule_id,rule_type,template_or_poi,weight,min_travel_minutes,max_travel_minutes,spawn_chance,required_between_cities,balance_status,notes
+road_gentle_straight,RoadTemplate,road_gentle_straight,35,0,0,100,FALSE,draft,主要延伸路段
+road_curve_left,RoadTemplate,road_curve_left,18,0,0,100,FALSE,draft,左缓弯
+road_curve_right,RoadTemplate,road_curve_right,18,0,0,100,FALSE,draft,右缓弯
+road_large_curve,RoadTemplate,road_large_curve,10,0,0,100,FALSE,draft,绕开大型地点
+road_t_junction,RoadTemplate,road_t_junction,10,0,0,100,FALSE,draft,产生地点或矿区支路
+road_offset_cross,RoadTemplate,road_offset_cross,3,0,0,100,FALSE,draft,少量网络交叉
+road_damaged_narrow,RoadTemplate,road_damaged_narrow,6,0,0,100,FALSE,draft,资源路和稀疏地点支路
+roadside_poi_candidate,POICandidate,roadside_poi,100,0.75,1.5,35,FALSE,draft,先独立判定候选是否启用且每个候选最多生成一个地点
+poi_isolated_house,RoadsidePOI,residential,40,0.75,1.5,100,FALSE,draft,候选启用后按地点权重选择
+poi_convenience_store,RoadsidePOI,convenience_store,15,0.75,1.5,100,FALSE,draft,岔路或旧停车区
+poi_restaurant,RoadsidePOI,restaurant,10,0.75,1.5,100,FALSE,draft,公路弯道或停车带
+poi_small_factory,RoadsidePOI,factory,10,0.75,1.5,100,FALSE,draft,工业出口方向可提高局部权重
+poi_vehicle_scene,RoadsidePOI,vehicle_scene,15,0.75,1.5,100,FALSE,draft,路肩停车带和事故点
+poi_closed_ruin,RoadsidePOI,closed_ruin,10,0.75,1.5,100,FALSE,draft,不可进入环境与扩展位
+poi_stone_quarry,MajorPOI,stone_quarry,100,3,7,100,TRUE,draft,每对城市之间至少安排一个候选
+poi_generated_city,MajorPOI,city_template,100,6,10,20,TRUE,draft,候选窗口内每个合法大型节点判定且到10分钟后强制

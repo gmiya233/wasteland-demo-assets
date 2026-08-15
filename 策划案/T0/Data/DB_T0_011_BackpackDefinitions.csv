@@ -1,0 +1,4 @@
+backpack_id,item_id,display_name,grid_width,grid_height,capacity,retains_contents_when_unequipped,can_open_in_world,can_store_backpacks,starter_contents,unlock_milestone,balance_status,notes
+backpack_t1,equipment_backpack_t1,一级背包,4,5,20,TRUE,TRUE,FALSE,tool_shovel_iron:1;food_bread_bagged:2;drink_water_bottled:2,t0_1,confirmed,新手房固定实例预装内容且普通同类实例默认为空
+backpack_t2,equipment_backpack_t2,二级背包,5,6,30,TRUE,TRUE,FALSE,,tbd,draft,升级配方必须先清空旧背包
+backpack_t3,equipment_backpack_t3,三级背包,6,7,42,TRUE,TRUE,FALSE,,tbd,draft,升级配方必须先清空旧背包
